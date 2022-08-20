@@ -3,7 +3,7 @@
 require_once 'controller/alumno.controller.php';
 
 $alumno = new AlumnoController;	
-$alumnos = $alumno->ListarAlumnosTI(1); 
+/*$alumnos = $alumno->ListarAlumnosTI(1); */
 ?>
 
 
@@ -19,7 +19,7 @@ $alumnos = $alumno->ListarAlumnosTI(1);
 </section>
 <?php
  if (!isset($_REQUEST['idAlumno'])==''){
-$Alumno= $this->Consultar($_REQUEST['idAlumno']);
+$Alumno = $alumno->Consultar($_REQUEST['idAlumno']);
   ?>
 
 

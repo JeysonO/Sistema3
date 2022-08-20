@@ -75,7 +75,7 @@ class AlumnoController extends IncludesController{
         $alumno->__SET('eliminado',$_REQUEST['eliminado']);                  
         $actualizar_alumno = $this->model->Actualizar($alumno);         
         if($actualizar_alumno=='error'){
-            header('Location: index.php?c=Alumno&a=v_Actualizar&idAlumno='. $curso->__GET('idAlumno'));
+            header('Location: index.php?c=Alumno&a=v_Actualizar&idAlumno='. $alumno->__GET('idAlumno'));
             echo 'No se Ha Podido Actualizar';
         }else{
             echo 'Actualizado Correctamente';

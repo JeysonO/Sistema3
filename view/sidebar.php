@@ -51,6 +51,9 @@
             <li>
               <li><a href="index.php?c=Alumno"><i class="fa fa-circle-o" aria-hidden="true"></i> Alumno</a></li>
             </li>
+            <li>
+              <li><a href="index.php?c=Universidad"><i class="fa fa-circle-o" aria-hidden="true"></i> Universidad</a></li>
+            </li>
           </ul>
         </li>
       </ul>

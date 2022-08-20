@@ -1,11 +1,9 @@
 
 <!-- Content Header (Page header) -->
 <?php 
-require_once 'controller/alumno.controller.php';
+require_once 'controller/universidad.controller.php';
 
-$alumno = new AlumnoController;	
 
-/*$alumnos = $alumno->ListarAlumnosTI(1); */
  ?>
 <section class="content-header">  
 	<h1>
@@ -23,51 +21,39 @@ $alumno = new AlumnoController;
 		<div class="col-sm-12 col-md-8 col-md-offset-2">
 	  		<div class="box">
 	    		<div class='box-header with-border'>
-	      			<h3 class='box-title'><i class="fa fa-briefcase"></i> Registrar Alumno</h3>
+	      			<h3 class='box-title'><i class="fa fa-briefcase"></i> Registrar Universidad</h3>
 	    		</div>
 	    		<div class="box-body">
-	    			<form id="frmRegistrarAlumno"  action="?c=Alumno&a=Registrar" method="post" enctype="multipart/form-data" role="form">	   				
+	    			<form id="frmRegistrarUniversidad"  action="?c=Universidad&a=Registrar" method="post" enctype="multipart/form-data" role="form">	   				
 
-					    <div class="form-group col-md-3 formulario__grupo formulario__grupo-correcto" id="grupo__primer_nombre" >
-					        <label for="nombre" class="formulario__label">Nombre</label>
+					    <div class="form-group col-md-8 formulario__grupo formulario__grupo-correcto" id="grupo__primer_nombre" >
+					        <label for="nombre" class="formulario__label">Nombre de la Universidad</label>
 					        	<div class="formulario__grupo-input">
-					        		<input type="text" id="primer_nombre" name="primer_nombre" value="" class="form-control  formulario__input" placeholder=""  required />
+					        		<input type="text" id="nombre" name="nombre" value="" class="form-control  formulario__input" placeholder=""  required />
 					        	</div> 	
 					    </div>
-					    <div class="form-group col-md-3">
-					        <label for="apellido_paterno" class="formulario__label">Apellido Paterno</label>
-					        <input type="text" id="apellido_paterno" name="apellido_paterno" value="" class="form-control formulario__input" placeholder=""  required />
+					    <div class="form-group col-md-4">
+					        <label for="codigo" class="formulario__label">Codigo</label>
+					        <input type="text" id="codigo" name="codigo" value="" class="form-control formulario__input" placeholder=""  required />
 					    </div>
-						<div class="form-group col-md-3">
-					        <label for="apellido_materno" class="formulario__label">Apellido Materno</label>
-					        <input type="text" id="apellido_materno" name="apellido_materno" value="" class="form-control formulario__input" placeholder=""  required />
-					    </div>		
-						<div class="form-group col-md-3">
-					        <label for="edad" class="formulario__label">Edad</label>
-					        <input type="text" id="edad" name="edad" value="" class="form-control formulario__input" placeholder=""  required />
-					    </div>	
-						<div class="form-group col-md-3">
-					        <label for="dni" class="formulario__label">DNI</label>
-					        <input type="text" id="dni" name="dni" value="" class="form-control formulario__input" placeholder=""  required />
-					    </div>			
-						<div class="form-group col-md-3">
-					        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-					        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="" class="form-control formulario__input" placeholder=""  required/>
-					    </div> 
-						<div class="form-group col-md-3">
-					        <label for="curso" class="formulario__label">Curso</label>
-					        <input type="text" id="curso" name="curso" value="" class="form-control formulario__input" placeholder=""  required />
-					    </div>	  
-						<div class="form-group col-md-3">
-					        <label for="carrera" class="formulario__label">Carrera</label>
-					        <input type="text" id="carrera" name="carrera" value="" class="form-control formulario__input" placeholder=""  required />
-					    </div>	
+						<div class="form-group col-md-4">
+					        <label for="direccion" class="formulario__label">Direccion</label>
+					        <input type="text" id="direccion" name="direccion" value="" class="form-control formulario__input" placeholder=""  required />
+					    </div>
+						<div class="form-group col-md-4">
+					        <label for="licenciado" class="formulario__label">Licenciado</label>
+					        <input type="text" id="licenciado" name="licenciado" value="" class="form-control formulario__input" placeholder=""  required />
+					    </div>
+						<div class="form-group col-md-4">
+					        <label for="cantidad_carreras" class="formulario__label">Cantidad de carreras</label>
+					        <input type="text" id="cantidad_carreras" name="cantidad_carreras" value="" class="form-control formulario__input" placeholder=""  required />
+					    </div>			   
 					  	<div class="col-md-12" style="margin-top:2em;">
 					  		<div class="col-md-6 col-sm-12">
 					        <button type="button" id="btnSubmit" class="btn btn-primary col-md-12 col-xs-12" disable><i class="fa fa-save"></i> Registrar</button>    		      
 					    </div>
 					     <div class="col-md-6 col-sm-12">					    
-					        <a href="index.php?c=Alumno" class="btn btn-danger col-md-12 col-xs-12 "><i class="fa fa-times-circle"></i> Cancelar</a>
+					        <a href="index.php?c=Universidad" class="btn btn-danger col-md-12 col-xs-12 "><i class="fa fa-times-circle"></i> Cancelar</a>
 					    </div>  
 					  </div>
 					</form> 
@@ -85,7 +71,7 @@ $alumno = new AlumnoController;
 		$("#btnSubmit").click(function(event) {
 			bootbox.dialog({
 	            message: "¿Estas seguro de Registrar?",
-	            title: "Registrar Alumno",
+	            title: "Registrar Curso",
 	            buttons: {
 	                main: {
 	                    label: "Registrar",
@@ -93,7 +79,7 @@ $alumno = new AlumnoController;
 	                    callback: function() {
 	                        //console.log('Eliminado al usuario');
 	                        
-	                              $( "#frmRegistrarAlumno" ).submit();
+	                              $( "#frmRegistrarUniversidad" ).submit();
 	                    }
 	                },
 	                danger: {
@@ -107,14 +93,15 @@ $alumno = new AlumnoController;
         	}); 
 		});
 
-		$("#primer_nombre").focusout(function() {
+		$("#nombre").focusout(function() {
 			$(this).val(PrimeraLetraMayuscula($(this).val()))
   		});
-  		$("#apellido_paterno").focusout(function() {
+  		$("#direccion").focusout(function() {
   			$(this).val(PrimeraLetraMayuscula($(this).val()))
   		});
-		  $("#apellido_materno").focusout(function() {
-  			$(this).val(PrimeraLetraMayuscula($(this).val()))
+
+		$("#licenciado").focusout(function() {
+			$(this).val(PrimeraLetraMayuscula($(this).val()))
   		});
 
 		$( "#Area_id" ).change(function ()

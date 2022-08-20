@@ -39,7 +39,8 @@ class AlumnoModel
     {
         $this->bd = new Conexion();
         $stmt = $this->bd->prepare("SELECT * FROM alumno WHERE idAlumno = :idAlumno;");
-        $stmt->bindParam(':idAlumno', $alumno->__GET('idAlumno'));
+        $var=$alumno->__GET('idAlumno');
+        $stmt->bindParam(':idAlumno', $var);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_OBJ);      
         $objAlumno = new Alumno(); 
@@ -64,16 +65,27 @@ class AlumnoModel
         $this->bd = new Conexion();
         $stmt = $this->bd->prepare("UPDATE alumno SET  primer_nombre=:primer_nombre,apellido_paterno=:apellido_paterno,apellido_materno=:apellido_materno,edad=:edad,fecha_nacimiento=:fecha_nacimiento,curso=:curso,carrera=:carrera,activo=:activo,modificado_por=:modificado_por WHERE idAlumno=:idAlumno;");
 
-        $stmt->bindParam(':idAlumno',$alumno->__GET('idAlumno'));
-        $stmt->bindParam(':primer_nombre',$alumno->__GET('primer_nombre'));
-        $stmt->bindParam(':apellido_paterno',$alumno->__GET('apellido_paterno'));
-        $stmt->bindParam(':apellido_materno',$alumno->__GET('apellido_materno'));
-        $stmt->bindParam(':edad',$alumno->__GET('edad'));
-        $stmt->bindParam(':fecha_nacimiento',$alumno->__GET('fecha_nacimiento'));
-        $stmt->bindParam(':curso',$alumno->__GET('curso'));
-        $stmt->bindParam(':carrera',$alumno->__GET('carrera'));
-        $stmt->bindParam(':activo',$alumno->__GET('activo'));
-        $stmt->bindParam(':modificado_por',$alumno->__GET('modificado_por'));
+        $var1=$alumno->__GET('idAlumno');
+        $var2=$alumno->__GET('primer_nombre');
+        $var3=$alumno->__GET('apellido_paterno');
+        $var4=$alumno->__GET('apellido_materno');
+        $var5=$alumno->__GET('edad');
+        $var6=$alumno->__GET('fecha_nacimiento');
+        $var7=$alumno->__GET('curso');
+        $var8=$alumno->__GET('carrera');
+        $var9=$alumno->__GET('activo');
+        $var10=$alumno->__GET('modificado_por');
+
+        $stmt->bindParam(':idAlumno',$var1);
+        $stmt->bindParam(':primer_nombre',$var2);
+        $stmt->bindParam(':apellido_paterno',$var3);
+        $stmt->bindParam(':apellido_materno',$var4);
+        $stmt->bindParam(':edad',$var5);
+        $stmt->bindParam(':fecha_nacimiento',$var6);
+        $stmt->bindParam(':curso',$var7);
+        $stmt->bindParam(':carrera',$var8);
+        $stmt->bindParam(':activo',$var9);
+        $stmt->bindParam(':modificado_por',$var10);
 
            
         if (!$stmt->execute()) {

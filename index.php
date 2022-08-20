@@ -66,7 +66,6 @@ if(!$User->Verificar_InicioSesion()){
 
                 // Llamar a la accion 
                 call_user_func( array( $controller, $action ) );
-
             }else{
 
                 // echo 'No existe el metodo';
